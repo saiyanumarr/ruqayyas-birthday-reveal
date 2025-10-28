@@ -599,14 +599,14 @@ const DiwaliFireworks = ({ onComplete }: DiwaliFireworksProps) => {
                 onClick={(e) => {
                 e.preventDefault();
                 e.stopPropagation();
-                
+
                 console.log('Continue button clicked');
-                
+
                 // Immediate disable of the button to prevent double-clicks
                 const button = e.currentTarget;
                 button.disabled = true;
                 button.style.opacity = '0.7';
-                
+
                 try {
                   // 1. Stop all timers
                   console.log('Cleaning up timers...');
@@ -614,13 +614,13 @@ const DiwaliFireworks = ({ onComplete }: DiwaliFireworksProps) => {
                   clearTimeout((window as any).__diwali_complete_timer);
                   const finaleTimers: number[] = (window as any).__diwali_finale_timers || [];
                   finaleTimers.forEach(clearTimeout);
-                  
+
                   // 2. Stop animation frame
                   console.log('Stopping animation frames...');
                   if ((window as any).mainLoop) {
                     cancelAnimationFrame((window as any).mainLoop);
                   }
-                  
+
                   // 3. Clean up canvases
                   console.log('Cleaning up canvases...');
                   ['main-canvas', 'trails-canvas'].forEach(id => {
@@ -637,7 +637,7 @@ const DiwaliFireworks = ({ onComplete }: DiwaliFireworksProps) => {
                       }
                     }
                   });
-                  
+
                   // 4. Stop any running animations and audio
                   console.log('Stopping animations and audio...');
                   (window as any).isRunning = false;
@@ -649,7 +649,7 @@ const DiwaliFireworks = ({ onComplete }: DiwaliFireworksProps) => {
                   } catch (err) {
                     console.warn('Failed to stop audio:', err);
                   }
-                  
+
                   // 5. Navigate after a short delay to ensure cleanup completes
                   console.log('Preparing to navigate...');
                   setTimeout(() => {
@@ -663,7 +663,7 @@ const DiwaliFireworks = ({ onComplete }: DiwaliFireworksProps) => {
                       button.style.opacity = '1';
                     }
                   }, 100);
-                  
+
                 } catch (e) {
                   console.error('Error during cleanup/navigation:', e);
                   // Re-enable button on error
@@ -675,8 +675,8 @@ const DiwaliFireworks = ({ onComplete }: DiwaliFireworksProps) => {
             >
               Continue to Your Special Day 💝
             </button>
+            </div>
           </div>
-        </div>
         )}
 
         {/* Reveal overlay that crossfades the fireworks in */}
@@ -688,6 +688,7 @@ const DiwaliFireworks = ({ onComplete }: DiwaliFireworksProps) => {
           }}
         />
       )}
+      </div>
     </div>
   );
 };

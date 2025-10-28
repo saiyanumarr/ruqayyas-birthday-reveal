@@ -1,5 +1,8 @@
 /* Styles copied (mostly) from the original `style.css` for the Diwali animation. */
 
+/* Birthday overlay styles fonts */
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap');
+
 /* scope reset for the POC only — avoid changing global app layout */
 .diwali-root * {
   position: relative;
@@ -176,8 +179,6 @@
 }
 
 /* Birthday overlay styles (scoped under .diwali-root) */
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;500;700&display=swap');
-
 .diwali-root .birthday-text {
   position: fixed;
   top: 50%;
