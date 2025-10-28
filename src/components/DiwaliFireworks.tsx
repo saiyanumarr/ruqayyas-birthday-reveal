@@ -477,10 +477,9 @@ const DiwaliFireworks = ({ onComplete }: DiwaliFireworksProps) => {
   }, []);
 
   return (
-    <div 
-      ref={rootRef} 
+    <div
+      ref={rootRef}
       className="diwali-root"
-      style={{ pointerEvents: showBirthday ? 'none' : 'auto' }}
     >
       {/* Inline the SVG spritesheet (hidden) */}
       <div style={{ height: 0, width: 0, position: 'absolute', visibility: 'hidden' }} dangerouslySetInnerHTML={{ __html: `
@@ -502,7 +501,7 @@ const DiwaliFireworks = ({ onComplete }: DiwaliFireworksProps) => {
           <div className="loading-init__header">Loading</div>
           <div className="loading-init__status">Assembling Shells</div>
         </div>
-        <div className="stage-container remove">
+        <div className="stage-container remove" style={{ pointerEvents: showBirthday ? 'none' : 'auto' }}>
           <div className="canvas-container">
             <canvas id="trails-canvas"></canvas>
             <canvas id="main-canvas"></canvas>
